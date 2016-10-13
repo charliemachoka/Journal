@@ -1,6 +1,9 @@
-def delete_entry(entry):
+import viewentries
+import main
+def delete_entry():
     """delete a journal created before"""
+    viewentries.view_entries()
+    choice = int(input("Enter the journal number to delete: "))
 
-    if input('You will not be able to view this again, are you sure? [y\/n]').upper() == 'y':
-        
-        print('Entry has been successfully deleted!')
+
+    del(main.journal[choice - 1])
